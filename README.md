@@ -37,7 +37,7 @@ A visually appealing, responsive, and structured website helps build credibility
 
 - Run `npm install` to install dependencies
 - Run `npm run dev` to start the development server
-- Visit `http://localhost:5173` in your browser
+- Visit `http://localhost:5174` in browser
 - Use navigation links to visit all pages
 - Toggle light/dark mode via the header button
 
