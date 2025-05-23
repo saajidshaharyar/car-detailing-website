@@ -25,11 +25,17 @@ A visually appealing, responsive, and structured website helps build credibility
 - **Basic placeholder content** added to all pages
 - **First Git commit and push to GitHub**
 
+#### May 20-21:
+- **Header and footer** components created and rendered on every page
+- **Home page** built with hero section, video background, pricing plans, and CTA (did not build AI-Generated Video just yet)
+- **Reusable UI components** (`Button`, `PricePlan`) completed
+- **Responsive layout confirmed**
+- **Codebase cleaned and fully commented for GitHub readability**
+
 ### Next Steps
-- Begin building out the **Home Page**, as well as the header and footer
-  - This will visually showcase the business’s offerings
-  - Will illustrate price plans for detailing services, as well as AI generated video to enhance marketing
-  - Helps demonstrate component-based layout and dynamic content rendering
+- Begin building the **Gallery**, **About Us**, and **Contact Us** pages
+  - These will complete the core navigation structure
+  - Help showcase work, brand story, and provide user contact points
 
 ---
 
