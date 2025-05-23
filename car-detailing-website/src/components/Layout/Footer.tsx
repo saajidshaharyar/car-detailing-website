@@ -1,8 +1,124 @@
-import React from 'react';
-
-// Footer component that shows copyright
-const Footer = () => {
-  return <footer>&copy; 2025 ARS Auto-Detailing</footer>;
-};
-
-export default Footer;
+import React, { Component } from 'react'
+import { PhoneIcon, MailIcon, MapPinIcon } from 'lucide-react'
+import Logo from '../UI/Logo'
+/*
+ * Footer Component
+ *
+ * Site-wide footer that displays:
+ * - Company branding
+ * - Quick navigation links
+ * - Contact information
+ * - Copyright notice
+ *
+ * Development Timeline:
+ * - Day 1: Basic footer structure
+ * - Day 2: Added responsive layout
+ * - Day 3: Integrated contact information
+ * - Day 4: Enhanced with dark mode support
+ */
+const Footer: React.FC = () => {
+  return (
+    <footer className="bg-black text-white pt-12 pb-8 relative">
+      {/* Animated border overlay */}
+      <div className="absolute top-0 left-0 w-full h-[2px] overflow-hidden">
+        <div className="w-[200%] h-full bg-gradient-to-r from-transparent via-primary-500 to-transparent animate-[shimmer_6s_ease-in-out_infinite]" />
+      </div>
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between">
+          <div className="mb-8 md:mb-0">
+            <div className="flex items-center">
+              <Logo />
+              <h3 className="ml-2 text-xl font-display tracking-wider text-primary-500">
+                ARS AUTO-DETAILING
+              </h3>
+            </div>
+            <p className="mt-4 max-w-md text-gray-400 font-sans">
+              Professional car detailing services that bring your vehicle back
+              to showroom condition. We take pride in our attention to detail
+              and customer satisfaction.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
+            <div>
+              <h4 className="text-lg font-heading mb-4 text-white">
+                Quick Links
+              </h4>
+              <ul className="space-y-2">
+                <li>
+                  <a
+                    href="/"
+                    className="text-gray-400 hover:text-blue-400 transition-colors"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/gallery"
+                    className="text-gray-400 hover:text-blue-400 transition-colors"
+                  >
+                    Gallery
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/about"
+                    className="text-gray-400 hover:text-blue-400 transition-colors"
+                  >
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/contact"
+                    className="text-gray-400 hover:text-blue-400 transition-colors"
+                  >
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-white">
+                Contact Information
+              </h4>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <MapPinIcon className="w-5 h-5 mr-2 text-blue-400 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-400">
+                    2000 Simcoe St N, Oshawa, ON L1G 0C5
+                  </span>
+                </li>
+                <li className="flex items-center">
+                  <PhoneIcon className="w-5 h-5 mr-2 text-blue-400" />
+                  <a
+                    href="tel:+1234567890"
+                    className="text-gray-400 hover:text-blue-400 transition-colors"
+                  >
+                    (123) 456-7890
+                  </a>
+                </li>
+                <li className="flex items-center">
+                  <MailIcon className="w-5 h-5 mr-2 text-blue-400" />
+                  <a
+                    href="mailto:info@arsautodetailing.com"
+                    className="text-gray-400 hover:text-blue-400 transition-colors"
+                  >
+                    info@arsautodetailing.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="border-t border-gray-800 mt-12 pt-6 text-center text-gray-500 text-sm font-sans">
+          <p>
+            &copy; {new Date().getFullYear()} ARS Auto-Detailing. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  )
+}
+export default Footer
