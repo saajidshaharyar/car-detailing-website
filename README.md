@@ -11,6 +11,16 @@ This project provides a fully customizable website template built with modern te
 ### Why Users Should Care
 A visually appealing, responsive, and structured website helps build credibility and increases conversion rates for local service businesses, especially in highly competitive urban markets like Toronto.
 
+### What does this project primarily use?
+This website was built using the following technologies:
+1. React.js - Frontend JavaScript library for building user interfaces
+2. TypeScript - Adds static typing to JavaScript
+3. Tailwind CSS - Utility-first CSS framework
+4. HTML5 - Structure and semantic markup
+5. CSS3 - Custom styling and animations
+No backend languages were used in this implementation, though the contact form
+is prepared to connect to a backend service.
+
 ---
 
 ## Installation & Development Timeline
@@ -32,10 +42,19 @@ A visually appealing, responsive, and structured website helps build credibility
 - **Responsive layout confirmed**
 - **Codebase cleaned and fully commented for GitHub readability**
 
+#### May 22-23:
+- Completed the **About Us**, **Gallery**, and **Contact Us** pages
+- About Us includes brand mission and team summary
+- Gallery page template created for future image uploads
+- Contact Us page includes business hours, email, phone, and embedded Google Map
+
 ### Next Steps
-- Begin building the **Gallery**, **About Us**, and **Contact Us** pages
-  - These will complete the core navigation structure
-  - Help showcase work, brand story, and provide user contact points
+- Add videos and images to each page
+  - Adding AI videos to enhance marketing on Homepage and Gallery
+  - Making logo look transparent
+  - Help showcase work by adding before and after pictures of past detailing jobs
+  - Adding 'Refund Policy' on footer and creating a seperate page
+  - Creating a 'FAQ' Page
 
 ---
 
