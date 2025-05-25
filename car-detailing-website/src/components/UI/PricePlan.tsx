@@ -80,7 +80,7 @@ const PricePlan: React.FC<PricePlanProps> = ({
         <Button
           variant="outline"
           fullWidth
-          to="/contact"
+          to="/contact#booking-form"
           size="lg"
           className="font-display tracking-wider"
         >
@@ -91,4 +91,3 @@ const PricePlan: React.FC<PricePlanProps> = ({
   )
 }
 export default PricePlan
-

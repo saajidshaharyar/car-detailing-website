@@ -186,21 +186,9 @@ const Home: React.FC = () => {
     <div className="w-full">
       {/* Hero Section with Large Logo */}
       <section className="relative h-screen overflow-hidden">
-        <div className="absolute inset-0">
-          <video
-            className="w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline
-          >
-            <source
-              src="https://assets.mixkit.co/videos/preview/mixkit-man-detailing-a-car-67274-large.mp4"
-              type="video/mp4"
-            />
-          </video>
-          <div className="absolute inset-0 hero-gradient"></div>
-        </div>
+        {/* Replace video with gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-primary-900"></div>
+        <div className="absolute inset-0 hero-gradient opacity-80"></div>
         <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
           <div className="mb-8">
             <img
@@ -318,7 +306,7 @@ const Home: React.FC = () => {
             difference.
           </p>
           <Button
-            to="/contact"
+            to="/contact#booking-form"
             size="lg"
             variant="primary"
             className="text-lg px-10"
@@ -333,4 +321,3 @@ const Home: React.FC = () => {
   )
 }
 export default Home
-

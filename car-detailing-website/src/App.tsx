@@ -1,12 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Layout/Header';
-import Footer from './components/Layout/Footer';
-import Home from './components/Pages/Home';
-import Gallery from './components/Pages/Gallery';
-import AboutUs from './components/Pages/AboutUs';
-import ContactUs from './components/Pages/ContactUs';
-
+import React, { useEffect, useState, Component } from 'react'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from 'react-router-dom'
+import Header from './components/Layout/Header'
+import Footer from './components/Layout/Footer'
+import Home from './components/Pages/Home'
+import Gallery from './components/Pages/Gallery'
+import AboutUs from './components/Pages/AboutUs'
+import ContactUs from './components/Pages/ContactUs'
+// Enhanced ScrollToTop component with smooth scrolling
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation()
+  useEffect(() => {
+    // If there's a hash, scroll to that element
+    if (hash) {
+      const element = document.querySelector(hash)
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+        })
+        return
+      }
+    }
+    // Otherwise scroll to top
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })
+  }, [pathname, hash])
+  return null
+}
 /*
  * Main Application Component
  *
@@ -24,25 +51,23 @@ export function App() {
   // Theme state management with localStorage persistence
   const [theme, setTheme] = useState<'light' | 'dark'>(
     () => (localStorage.getItem('theme') as 'light' | 'dark') || 'light',
-  );
-
+  )
   // Effect to handle theme changes and update DOM
   useEffect(() => {
     if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add('dark')
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove('dark')
     }
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
+    localStorage.setItem('theme', theme)
+  }, [theme])
   // Theme toggle handler
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
-
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'))
+  }
   return (
     <Router>
+      <ScrollToTop />
       {/* Main application wrapper with theme-aware styling */}
       <div className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
         <Header theme={theme} toggleTheme={toggleTheme} />
@@ -57,5 +82,5 @@ export function App() {
         <Footer />
       </div>
     </Router>
-  );
+  )
 }
