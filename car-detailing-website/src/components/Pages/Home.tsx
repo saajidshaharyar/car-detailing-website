@@ -314,7 +314,7 @@ const renderAnimatedText = (text: string, className = '') => (
   return (
     <div className="w-full overflow-x-hidden">
       {/* Hero Section with Large Logo */}
-      <section className="relative h-screen overflow-hidden pt-24">
+      <section className="relative min-h-screen overflow-hidden pt-24">
         <video
           autoPlay
           loop
@@ -344,7 +344,7 @@ const renderAnimatedText = (text: string, className = '') => (
               We bring showroom shine—right to your home or office.
      </p>
   </div>
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
               to="/contact"
               size="lg"
@@ -356,7 +356,7 @@ const renderAnimatedText = (text: string, className = '') => (
               to="/gallery"
               variant="outline"
               size="lg"
-              className="min-w-[200px] text-lg font-edobrush px-8 sm:px-20 !bg-white !text-primary-600 border-primary-600 hover:!bg-primary-600 hover:!text-white mt-4"
+              className="min-w-[200px] text-lg font-edobrush px-20 !bg-white !text-primary-600 border-primary-600 hover:!bg-primary-600 hover:!text-white"
             >
               View Our Work
             </Button>
