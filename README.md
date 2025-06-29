@@ -1,7 +1,11 @@
-# ARS Auto-Detailing Website
+# PrestigeOnWheelz Auto-Detailing
+
 A web application designed to provide my personal car detailing business with a modern, responsive website that informs customers and boosts online presence.
 
-## Description
+---
+
+## 📌 Description
+
 ### Problem Statement
 Local car detailing businesses often lack a professional, digital presence — missing out on customer engagement and trust.
 
@@ -13,67 +17,64 @@ A visually appealing, responsive, and structured website helps build credibility
 
 ---
 
-## Installation & Development Timeline
+## 💻 Tech Stack
 
-### Development Progress
-#### May 18-19:
-- **Project setup** using Vite + React + TypeScript
-- **Folder structure organized** into `components/Layout` and `components/Pages`
-- **Routing** implemented with `react-router-dom` for Home, About Us, Gallery, and Contact pages
-- **Dark/Light mode toggle** with `useState`, `localStorage`, and live DOM updates
-- **Header and footer** components created and rendered on every page
-- **Basic placeholder content** added to all pages
-- **First Git commit and push to GitHub**
-
-#### May 20-21:
-- **Header and footer** components created and rendered on every page
-- **Home page** built with hero section, video background, pricing plans, and CTA (did not build AI-Generated Video just yet)
-- **Reusable UI components** (`Button`, `PricePlan`) completed
-- **Responsive layout confirmed**
-- **Codebase cleaned and fully commented for GitHub readability**
-
-### Next Steps
-- Begin building the **Gallery**, **About Us**, and **Contact Us** pages
-  - These will complete the core navigation structure
-  - Help showcase work, brand story, and provide user contact points
+- **React.js** – Frontend framework
+- **TypeScript** – Type-safe JavaScript
+- **Vite** – Fast bundler and dev server
+- **Tailwind CSS** – Utility-first styling
+- **Firebase Firestore** – Booking data storage
+- **EmailJS** – Automated email confirmations
+- **Framer Motion** – Smooth animations
+- **React-Router** – Page navigation
 
 ---
 
-## Usage
+## 🚀 Features
 
-- Run `npm install` to install dependencies
-- Run `npm run dev` to start the development server
-- Visit `http://localhost:5174` in browser
-- Use navigation links to visit all pages
-- Toggle light/dark mode via the header button
-
----
-
-## Coding Style
-
-- **React** functional components with hooks
-- **TypeScript** for type safety and scalability
-- Consistent file structure (Pages and Layout)
-- Component-based development
-- Organized and descriptive commit messages
+- Hero section with animated text and video background
+- Dynamic pricing tiers (Standard, Advanced, Premium)
+- Fully functional **booking form** with:
+  - Time slot logic (blocks 3-hour ranges)
+  - Friday lockout
+  - Firestore-based availability check
+  - Email confirmations to both customer and business
+- Modal-based feature highlights
+- Dark/light theme toggle
+- Responsive before/after gallery with modal + keyboard nav
+- Mobile-first, polished design
 
 ---
 
-## Test
+## 🛠️ Installation & Development Timeline
 
-Manual testing in local development:
-- Navigation and routing tested via `react-router-dom`
-- Dark/light mode tested through toggle functionality and DOM inspection
-- File paths and routing checked via console and browser dev tools
+### ✅ May 18–19
+- Vite + TypeScript setup
+- Folder structure under `components/Layout` and `components/Pages`
+- Routing with `react-router-dom`
+- Header/footer + light/dark mode
+- Initial Git commit
 
-(Automated testing not yet implemented)
+### ✅ May 20–21
+- Homepage completed (video hero, CTA, pricing)
+- Reusable components (`Button`, `PricePlan`)
+- Code commented and cleaned
+
+### ✅ May 22–23
+- About, Gallery, and Contact pages finalized
+- Embedded Google Maps on Contact page
+- Gallery slider and FAQ planning started
+
+### ✅ June 24–26
+- Firebase integration for booking availability
+- Time slot gray-out and availability logic complete
+- EmailJS integration added with `.env.local` key protection
+- Final environment-safe push to GitHub
 
 ---
 
-## License
+## ⚙️ Usage
 
-MIT License (To be finalized before project deployment)
-
----
-
-*This README will be updated continuously as new features are developed.*
+```bash
+npm install       # Install dependencies
+npm run dev       # Start local development server
