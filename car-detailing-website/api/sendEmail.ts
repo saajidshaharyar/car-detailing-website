@@ -15,7 +15,7 @@ export default async function handler(req: any, res: any) {
       process.env.EMAILJS_SERVICE_ID!,
       process.env.EMAILJS_TEMPLATE_ID!,
       { ...bookingData, to_email: bookingData.email },
-      { publicKey: process.env.EMAILJS_PUBLIC_KEY! }
+      { publicKey: process.env.EMAILJS_PUBLIC_KEY!, privateKey: process.env.EMAILJS_PRIVATE_KEY! }
     );
 
     // Send to business
@@ -23,7 +23,7 @@ export default async function handler(req: any, res: any) {
       process.env.EMAILJS_SERVICE_ID!,
       process.env.EMAILJS_TEMPLATE_ID!,
       { ...bookingData, to_email: 'prestigeonwheelz@gmail.com' },
-      { publicKey: process.env.EMAILJS_PUBLIC_KEY! }
+      { publicKey: process.env.EMAILJS_PUBLIC_KEY!, privateKey: process.env.EMAILJS_PRIVATE_KEY! }
     );
 
     res.statusCode = 200;
