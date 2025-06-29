@@ -331,12 +331,12 @@ const renderAnimatedText = (text: string, className = '') => (
           <div className="bg-black/60 rounded-2xl px-10 py-12 shadow-2xl border border-white/10 backdrop-blur-sm max-w-4xl w-full">
      {renderAnimatedText(
   'UNMATCHED QUALITY,',
-  'text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight drop-shadow-md',
+  'text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight drop-shadow-md',
 )}
 
 {renderAnimatedText(
   'DELIVERED TO YOUR DRIVEWAY',
-  'text-red-600 text-4xl md:text-5xl lg:text-6xl italic mt-10',
+  'text-red-600 text-2xl sm:text-3xl md:text-4xl lg:text-5xl italic mt-10',
 )}
 
     <p className="text-3xl md:text-xl text-gray-200 mt-6 font-light tracking-wide max-w-4xl mx-auto leading-relaxed" style={{ fontFamily: 'PARAX' }}>
@@ -344,11 +344,11 @@ const renderAnimatedText = (text: string, className = '') => (
               We bring showroom shine—right to your home or office.
      </p>
   </div>
-          <div className="mt-16 flex flex-wrap gap-6 justify-center">
+          <div className="mt-16 flex flex-wrap gap-4 justify-center px-4">
             <Button
               to="/contact"
               size="lg"
-              className="text-lg px-20 font-edobrush" 
+              className="min-w-[200px] text-lg px-6 font-edobrush" 
             >
               Book Now <ArrowRightIcon className="ml-2 w-5 h-5" />
             </Button>
@@ -356,7 +356,7 @@ const renderAnimatedText = (text: string, className = '') => (
               to="/gallery"
               variant="outline"
               size="lg"
-              className="text-lg font-edobrush px-20 !bg-white !text-primary-600 border-primary-600 hover:!bg-primary-600 hover:!text-white"
+              className="min-w-[200px] text-lg font-edobrush px-20 !bg-white !text-primary-600 border-primary-600 hover:!bg-primary-600 hover:!text-white"
             >
               View Our Work
             </Button>

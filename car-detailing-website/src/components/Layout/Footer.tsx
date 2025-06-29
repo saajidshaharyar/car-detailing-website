@@ -32,13 +32,13 @@ const Footer: React.FC = () => {
                 PrestigeOnWheelz
               </h3>
             </div>
-            <p className="mt-4 max-w-md text-gray-400 font-sans">
+            <p className="mt-4 max-w-xs text-gray-400 font-sans">
               Professional car detailing services that bring your vehicle back
               to showroom condition. We take pride in our attention to detail
               and customer satisfaction.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 md:gap-x-12 max-w-full">
             <div>
               <h4 className="text-lg font-heading mb-4 text-white">
                 Quick Links
