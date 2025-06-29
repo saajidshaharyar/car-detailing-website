@@ -312,7 +312,7 @@ const renderAnimatedText = (text: string, className = '') => (
     </div>
   )
   return (
-    <div className="w-full">
+    <div className="w-full overflow-x-hidden">
       {/* Hero Section with Large Logo */}
       <section className="relative h-screen overflow-hidden pt-24">
         <video
@@ -344,7 +344,7 @@ const renderAnimatedText = (text: string, className = '') => (
               We bring showroom shine—right to your home or office.
      </p>
   </div>
-          <div className="mt-16 flex flex-wrap gap-4 justify-center px-4">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
             <Button
               to="/contact"
               size="lg"
@@ -356,7 +356,7 @@ const renderAnimatedText = (text: string, className = '') => (
               to="/gallery"
               variant="outline"
               size="lg"
-              className="min-w-[200px] text-lg font-edobrush px-20 !bg-white !text-primary-600 border-primary-600 hover:!bg-primary-600 hover:!text-white mt-4"
+              className="min-w-[200px] text-lg font-edobrush px-8 sm:px-20 !bg-white !text-primary-600 border-primary-600 hover:!bg-primary-600 hover:!text-white mt-4"
             >
               View Our Work
             </Button>
@@ -368,7 +368,7 @@ const renderAnimatedText = (text: string, className = '') => (
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-center">
             <div className="text-left">
-              <h2 className="text-6xl lg:text-6xl font-bold mb-8 text-primary-500 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary-500 leading-tight text-center sm:text-left px-2 sm:px-0">
                 Why Choose PrestigeOnWheelz?
               </h2>
               <p className="text-gray-600 dark:text-gray-400 text-2xl leading-relaxed">
