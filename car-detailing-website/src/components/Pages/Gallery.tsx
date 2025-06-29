@@ -62,7 +62,7 @@ const Gallery: React.FC = () => {
   return (
     <div className="transition-colors duration-500 bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800 min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="w-full flex flex-col md:flex-row">
+      <section className="w-full flex flex-col md:flex-row h-auto md:h-[340px]">
         <div className="w-full md:w-1/2 h-64 md:h-full bg-gradient-to-br from-primary-700 to-primary-800 text-white px-10 py-8 flex flex-col justify-center">
           <div className="max-w-md">
             <h1 className="text-4xl md:text-5xl font-bold italic mb-4 font-display">
