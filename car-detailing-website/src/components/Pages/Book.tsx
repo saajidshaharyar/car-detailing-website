@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Button from '../UI/Button';
-import emailjs from '@emailjs/browser';
 import { db } from '../../lib/firebaseConfig';
 import {
   collection,
@@ -114,27 +113,12 @@ const Book: React.FC = () => {
       // Save to Firestore
       await addDoc(collection(db, 'bookings'), bookingData);
 
-      // Send confirmation email to customer
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          ...bookingData,
-          to_email: formData.email,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-  );
-
-      // Send internal notification to business
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          ...bookingData,
-          to_email: 'prestigeonwheelz@gmail.com',
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-  );
+      // Send emails via backend API
+      await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ bookingData }),
+      });
       
       // Resets form
       setSuccess(true);
