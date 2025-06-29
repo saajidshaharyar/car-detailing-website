@@ -1,21 +1,23 @@
 import emailjs from '@emailjs/nodejs';
 
-export default async function handler(req: any, res: any) {
-  if (req.method !== 'POST') {
-    res.statusCode = 405;
-    res.end('Method Not Allowed');
-    return;
-  }
-
-  const { bookingData } = req.body;
-
+export async function POST(req) {
   try {
+    const { bookingData } = await req.json();
+
+    console.log('SERVICE_ID:', process.env.EMAILJS_SERVICE_ID);
+    console.log('TEMPLATE_ID:', process.env.EMAILJS_TEMPLATE_ID);
+    console.log('PUBLIC_KEY:', process.env.EMAILJS_PUBLIC_KEY);
+    console.log('PRIVATE_KEY:', process.env.EMAILJS_PRIVATE_KEY);
+
     // Send to customer
     await emailjs.send(
       process.env.EMAILJS_SERVICE_ID!,
       process.env.EMAILJS_TEMPLATE_ID!,
       { ...bookingData, to_email: bookingData.email },
-      { publicKey: process.env.EMAILJS_PUBLIC_KEY!, privateKey: process.env.EMAILJS_PRIVATE_KEY! }
+      {
+        publicKey: process.env.EMAILJS_PUBLIC_KEY!,
+        privateKey: process.env.EMAILJS_PRIVATE_KEY!,
+      }
     );
 
     // Send to business
@@ -23,15 +25,21 @@ export default async function handler(req: any, res: any) {
       process.env.EMAILJS_SERVICE_ID!,
       process.env.EMAILJS_TEMPLATE_ID!,
       { ...bookingData, to_email: 'prestigeonwheelz@gmail.com' },
-      { publicKey: process.env.EMAILJS_PUBLIC_KEY!, privateKey: process.env.EMAILJS_PRIVATE_KEY! }
+      {
+        publicKey: process.env.EMAILJS_PUBLIC_KEY!,
+        privateKey: process.env.EMAILJS_PRIVATE_KEY!,
+      }
     );
 
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({ success: true }));
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
   } catch (err) {
     console.error('Email sending failed:', err);
-    res.statusCode = 500;
-    res.end(JSON.stringify({ error: 'Email failed to send' }));
+    return new Response(JSON.stringify({ error: 'Email failed to send' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 }
