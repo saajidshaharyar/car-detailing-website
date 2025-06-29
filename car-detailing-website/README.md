@@ -1,54 +1,79 @@
-# React + TypeScript + Vite
+# ARS Auto-Detailing Website
+A web application designed to provide my personal car detailing business with a modern, responsive website that informs customers and boosts online presence.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+### Problem Statement
+Local car detailing businesses often lack a professional, digital presence — missing out on customer engagement and trust.
 
-Currently, two official plugins are available:
+### Why This Program Solves the Problem
+This project provides a fully customizable website template built with modern technologies (React, TypeScript, Vite), giving small businesses an easy-to-maintain, attractive platform to showcase their services.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Why Users Should Care
+A visually appealing, responsive, and structured website helps build credibility and increases conversion rates for local service businesses, especially in highly competitive urban markets like Toronto.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Installation & Development Timeline
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Development Progress
+#### May 18-19:
+- **Project setup** using Vite + React + TypeScript
+- **Folder structure organized** into `components/Layout` and `components/Pages`
+- **Routing** implemented with `react-router-dom` for Home, About Us, Gallery, and Contact pages
+- **Dark/Light mode toggle** with `useState`, `localStorage`, and live DOM updates
+- **Header and footer** components created and rendered on every page
+- **Basic placeholder content** added to all pages
+- **First Git commit and push to GitHub**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+#### May 20-21:
+- **Header and footer** components created and rendered on every page
+- **Home page** built with hero section, video background, pricing plans, and CTA (did not build AI-Generated Video just yet)
+- **Reusable UI components** (`Button`, `PricePlan`) completed
+- **Responsive layout confirmed**
+- **Codebase cleaned and fully commented for GitHub readability**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Next Steps
+- Begin building the **Gallery**, **About Us**, and **Contact Us** pages
+  - These will complete the core navigation structure
+  - Help showcase work, brand story, and provide user contact points
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## Usage
+
+- Run `npm install` to install dependencies
+- Run `npm run dev` to start the development server
+- Visit `http://localhost:5174` in browser
+- Use navigation links to visit all pages
+- Toggle light/dark mode via the header button
+
+---
+
+## Coding Style
+
+- **React** functional components with hooks
+- **TypeScript** for type safety and scalability
+- Consistent file structure (Pages and Layout)
+- Component-based development
+- Organized and descriptive commit messages
+
+---
+
+## Test
+
+Manual testing in local development:
+- Navigation and routing tested via `react-router-dom`
+- Dark/light mode tested through toggle functionality and DOM inspection
+- File paths and routing checked via console and browser dev tools
+
+(Automated testing not yet implemented)
+
+---
+
+## License
+
+MIT License (To be finalized before project deployment)
+
+---
+
+*This README will be updated continuously as new features are developed.*
