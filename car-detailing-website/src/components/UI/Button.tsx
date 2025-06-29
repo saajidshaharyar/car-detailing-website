@@ -46,15 +46,20 @@ const Button: React.FC<ButtonProps> = ({
   }
   const widthClass = fullWidth ? 'w-full' : ''
   const classes = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${widthClass} ${className}`
+  const handleClick = () => {
+    if (onClick) {
+      onClick()
+    }
+  }
   if (to) {
     return (
-      <Link to={to} className={classes}>
+      <Link to={to} className={classes} onClick={handleClick}>
         {children}
       </Link>
     )
   }
   return (
-    <button type={type} className={classes} onClick={onClick}>
+    <button type={type} className={classes} onClick={handleClick}>
       {children}
     </button>
   )

@@ -1,7 +1,8 @@
-import React, { useState, Component } from 'react'
+import React, { useEffect, useState, Component } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { MenuIcon, XIcon, SunIcon, MoonIcon } from 'lucide-react'
 import Logo from '../UI/Logo'
+import { TypeAnimation } from 'react-type-animation'
 /*
  * Header Component
  *
@@ -25,6 +26,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
   // State for mobile menu visibility
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
+  const isHomePage = location.pathname === '/'
   // Navigation links configuration
   const navLinks = [
     {
@@ -50,13 +52,24 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
   }
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm transition-colors duration-300">
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center" aria-label="Go to homepage">
+      <div className="container mx-auto px-6 py-0 grid grid-cols-[auto_1fr_auto] items-center">
+        {/* Logo section */}
+        <div className="flex items-center items-start space-x-3">
           <Logo />
-          <span className="ml-3 text-2xl font-display tracking-wider text-primary-500">
-            ARS AUTO-DETAILING
-          </span>
-        </Link>
+        </div>
+        <div className="text-center">
+          <TypeAnimation
+            sequence={[
+              'Bringing Showroom Shine to Your Driveway.', 2500,
+              'Precision. Passion. Prestige.', 2500,
+              'Your Car Deserves the Best.', 2500,
+            ]}
+            speed={50}
+            repeat={Infinity}
+            wrapper="span"
+            className="text-sm md:text-base font-light text-white"
+          />
+        </div>
         <div className="flex items-center space-x-4">
           {/* Desktop Dropdown */}
           <div className="hidden md:block relative">
@@ -87,7 +100,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`block px-4 py-2 text-sm hover:bg-white/10 transition-colors border-b border-transparent hover:border-current ${location.pathname === link.path ? 'text-primary-500 underline' : 'text-white hover:underline'}`}
+                    className={`block px-4 py-2 text-sm font-edobrush hover:bg-white/10 transition-colors border-b border-transparent hover:border-current ${location.pathname === link.path ? 'text-primary-500 underline' : 'text-white hover:underline'}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.name}
@@ -133,6 +146,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
           </button>
         </div>
       </div>
+    
       {/* Mobile Menu */}
       {isMenuOpen && (
         <nav className="md:hidden bg-black/90 backdrop-blur-md border-t border-white/10">

@@ -33,6 +33,10 @@ const PricePlan: React.FC<PricePlanProps> = ({
   features,
   popular = false,
 }) => {
+  const handleSelectPackage = () => {
+    // Store selected package in localStorage
+    localStorage.setItem('selectedPackage', title)
+  }
   return (
     <div
       className={`
@@ -83,6 +87,7 @@ const PricePlan: React.FC<PricePlanProps> = ({
           to="/contact#booking-form"
           size="lg"
           className="font-display tracking-wider"
+          onClick={handleSelectPackage}
         >
           SELECT PACKAGE
         </Button>

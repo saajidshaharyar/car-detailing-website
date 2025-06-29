@@ -2,6 +2,8 @@
 /*     Google Fonts        */
 /* ----------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Inter&family=Orbitron&family=Rajdhani&display=swap');
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 /* ----------------------- */
 /*   Tailwind CSS Layers   */
@@ -15,21 +17,14 @@
 /* ----------------------- */
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'EDOBrush', cursive;
   }
 
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Didot', 'Bodoni', 'Georgia', serif;
+
   }
 }
-
-/* ----------------------------- */
-/*   Custom Gradient Background  */
-/* ----------------------------- */
-.hero-gradient {
-  background-image: linear-gradient(135deg, #000000 0%, #ff0000 100%);
-}
-
 /* ------------------------------ */
 /*   Gradient Text Styling        */
 /* ------------------------------ */
@@ -60,4 +55,49 @@
 /* ----------------------------------- */
 .premium-icon {
   @apply w-16 h-16 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition duration-300;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  content: none !important;
+}
+.slick-dots li button:before {
+  font-size: 4px;
+  color: #ef4444 !important;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+}
+.slick-dots li.slick-active button:before {
+  font-size: 6px;
+  color: #dc2626 !important;
+  opacity: 1;
+  transform: scale(1.4);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+@font-face {
+  font-family: 'EDOBrush';
+  src: url('/fonts/edosz.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.font-edobrush {
+  font-family: 'EDOBrush';
+}
+@font-face {
+  font-family: 'PARAX';
+  src: url('/fonts/PARAXOME.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.font-parax {
+  font-family: 'PARAX';
+}
+@font-face {
+  font-family: 'Cyber';
+  src: url('/fonts/Cyber Brush.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.font-cyber {
+  font-family: 'Cyber';
 }

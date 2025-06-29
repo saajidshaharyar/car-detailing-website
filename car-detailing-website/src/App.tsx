@@ -11,6 +11,8 @@ import Home from './components/Pages/Home'
 import Gallery from './components/Pages/Gallery'
 import AboutUs from './components/Pages/AboutUs'
 import ContactUs from './components/Pages/ContactUs'
+import Book from './components/Pages/Book'; // adjust path as needed
+
 // Enhanced ScrollToTop component with smooth scrolling
 const ScrollToTop = () => {
   const { pathname, hash } = useLocation()
@@ -48,9 +50,9 @@ const ScrollToTop = () => {
  * - Day 3: Theme persistence with localStorage
  */
 export function App() {
-  // Theme state management with localStorage persistence
+  // Update default theme to 'dark'
   const [theme, setTheme] = useState<'light' | 'dark'>(
-    () => (localStorage.getItem('theme') as 'light' | 'dark') || 'light',
+    () => (localStorage.getItem('theme') as 'light' | 'dark') || 'dark',
   )
   // Effect to handle theme changes and update DOM
   useEffect(() => {
@@ -77,6 +79,7 @@ export function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/book" element={<Book />} />
           </Routes>
         </main>
         <Footer />
@@ -84,3 +87,4 @@ export function App() {
     </Router>
   )
 }
+

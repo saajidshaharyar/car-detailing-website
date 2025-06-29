@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center">
               <Logo />
               <h3 className="ml-2 text-xl font-display tracking-wider text-primary-500">
-                ARS AUTO-DETAILING
+                PrestigeOnWheelz
               </h3>
             </div>
             <p className="mt-4 max-w-md text-gray-400 font-sans">
@@ -86,25 +86,25 @@ const Footer: React.FC = () => {
                 <li className="flex items-start">
                   <MapPinIcon className="w-5 h-5 mr-2 text-blue-400 flex-shrink-0 mt-0.5" />
                   <span className="text-gray-400">
-                    2000 Simcoe St N, Oshawa, ON L1G 0C5
+                    Anywhere in the GTA
                   </span>
                 </li>
                 <li className="flex items-center">
                   <PhoneIcon className="w-5 h-5 mr-2 text-blue-400" />
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+6475076121"
                     className="text-gray-400 hover:text-blue-400 transition-colors"
                   >
-                    (123) 456-7890
+                    (647) 507-6121
                   </a>
                 </li>
                 <li className="flex items-center">
                   <MailIcon className="w-5 h-5 mr-2 text-blue-400" />
                   <a
-                    href="mailto:info@arsautodetailing.com"
+                    href="mailto:prestigeonwheelz@gmail.com"
                     className="text-gray-400 hover:text-blue-400 transition-colors"
                   >
-                    info@arsautodetailing.com
+                    prestigeonwheelz@gmail.com
                   </a>
                 </li>
               </ul>
@@ -113,7 +113,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="border-t border-gray-800 mt-12 pt-6 text-center text-gray-500 text-sm font-sans">
           <p>
-            &copy; {new Date().getFullYear()} ARS Auto-Detailing. All rights
+            &copy; {new Date().getFullYear()} PrestigeOnWheelz. All rights
             reserved.
           </p>
         </div>
@@ -122,3 +122,4 @@ const Footer: React.FC = () => {
   )
 }
 export default Footer
+

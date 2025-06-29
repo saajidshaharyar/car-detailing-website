@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
-import Button from './Button'
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Button from './Button';
+
 /*
  * ContactForm Component
  *
@@ -9,22 +11,51 @@ import Button from './Button'
  * - Appointment scheduling
  * - Form validation
  *
- * Development Timeline:
- * - Day 3: Initial form structure
- * - Day 3: Added form validation
- * - Day 4: Enhanced styling and responsiveness
- * - Day 4: Integrated with Button component
- *
- * Note: Form submission is currently a placeholder.
- * Integration with a backend service would be required
- * for actual form processing.
+ * Backend integration: Form data is passed to the booking page
+ * using sessionStorage and router navigation.
  */
+
 const ContactForm: React.FC = () => {
+  const [selectedPackage, setSelectedPackage] = useState<string>('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedPackage = localStorage.getItem('selectedPackage');
+    if (storedPackage) {
+      setSelectedPackage(storedPackage);
+      localStorage.removeItem('selectedPackage');
+    }
+  }, []);
+
+  useEffect(() => {
+    const checkForPackage = () => {
+      const storedPackage = localStorage.getItem('selectedPackage');
+      if (storedPackage && !selectedPackage) {
+        setSelectedPackage(storedPackage);
+        localStorage.removeItem('selectedPackage');
+      }
+    };
+    checkForPackage();
+    window.addEventListener('focus', checkForPackage);
+    return () => window.removeEventListener('focus', checkForPackage);
+  }, [selectedPackage]);
+
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Form submission logic would be implemented here
-    alert('Form submitted! This would connect to your backend.')
-  }
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const formData = {
+      firstName: form.firstName.value,
+      lastName: form.lastName.value,
+      email: form.email.value,
+      phone: form.phone.value,
+      service: form.service.value,
+      message: form.message.value,
+    };
+
+    sessionStorage.setItem('contactForm', JSON.stringify(formData));
+    navigate('/book');
+  };
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -87,12 +118,14 @@ const ContactForm: React.FC = () => {
           id="service"
           name="service"
           required
+          value={selectedPackage}
+          onChange={(e) => setSelectedPackage(e.target.value)}
           className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:focus:ring-blue-400 dark:focus:border-blue-400"
         >
           <option value="">Select a package</option>
-          <option value="standard">Standard Detail</option>
-          <option value="advanced">Advanced Detail</option>
-          <option value="premium">Premium Detail</option>
+          <option value="Standard Detail">Standard Detail</option>
+          <option value="Advanced Detail">Advanced Detail</option>
+          <option value="Premium Detail">Premium Detail</option>
         </select>
       </div>
       <div>
@@ -112,6 +145,7 @@ const ContactForm: React.FC = () => {
         Submit Request
       </Button>
     </form>
-  )
-}
-export default ContactForm
+  );
+};
+
+export default ContactForm;
