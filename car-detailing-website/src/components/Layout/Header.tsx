@@ -52,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
   }
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-sm transition-colors duration-300">
-      <div className="container mx-auto px-6 py-0 grid grid-cols-[auto_1fr_auto] items-center">
+      <div className="container mx-auto px-4 sm:px-6 py-0 grid grid-cols-3 md:grid-cols-[auto_1fr_auto] items-center">
         {/* Logo section */}
         <div className="flex items-center items-start space-x-3">
           <Logo />
@@ -126,7 +126,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden w-10 h-10 flex items-center justify-center rounded-md hover:bg-white/10 transition-all duration-300 text-white transform hover:-translate-y-1 hover:shadow-lg"
+            className="md:hidden w-10 h-10 flex items-center justify-center rounded-md hover:bg-white/10 transition-all duration-300 text-white font-edobrush transform hover:-translate-y-1 hover:shadow-lg"
             aria-label="Toggle menu"
           >
             <div className="w-6 h-6 relative">
