@@ -314,7 +314,7 @@ const renderAnimatedText = (text: string, className = '') => (
   return (
     <div className="w-full">
       {/* Hero Section with Large Logo */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative h-screen overflow-hidden pt-24">
         <video
           autoPlay
           loop
@@ -328,7 +328,7 @@ const renderAnimatedText = (text: string, className = '') => (
       
         {/* Replace video with gradient background */}
         <div className="relative h-full flex flex-col items-center justify-center text-center px-4">
-          <div className="bg-black/60 rounded-2xl px-10 py-12 shadow-2xl border border-white/10 backdrop-blur-sm max-w-4xl w-full">
+          <div className="bg-black/60 rounded-2xl px-4 sm:px-10 py-12 shadow-2xl border border-white/10 backdrop-blur-sm w-full max-w-4xl mx-auto">
      {renderAnimatedText(
   'UNMATCHED QUALITY,',
   'text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight drop-shadow-md',
@@ -356,7 +356,7 @@ const renderAnimatedText = (text: string, className = '') => (
               to="/gallery"
               variant="outline"
               size="lg"
-              className="min-w-[200px] text-lg font-edobrush px-20 !bg-white !text-primary-600 border-primary-600 hover:!bg-primary-600 hover:!text-white"
+              className="min-w-[200px] text-lg font-edobrush px-20 !bg-white !text-primary-600 border-primary-600 hover:!bg-primary-600 hover:!text-white mt-4"
             >
               View Our Work
             </Button>
