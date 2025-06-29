@@ -1,15 +1,9 @@
 import emailjs from '@emailjs/nodejs';
 
-export async function POST(req) {
+export async function POST(request: Request): Promise<Response> {
   try {
-    const { bookingData } = await req.json();
+    const { bookingData } = await request.json();
 
-    console.log('SERVICE_ID:', process.env.EMAILJS_SERVICE_ID);
-    console.log('TEMPLATE_ID:', process.env.EMAILJS_TEMPLATE_ID);
-    console.log('PUBLIC_KEY:', process.env.EMAILJS_PUBLIC_KEY);
-    console.log('PRIVATE_KEY:', process.env.EMAILJS_PRIVATE_KEY);
-
-    // Send to customer
     await emailjs.send(
       process.env.EMAILJS_SERVICE_ID!,
       process.env.EMAILJS_TEMPLATE_ID!,
@@ -20,7 +14,6 @@ export async function POST(req) {
       }
     );
 
-    // Send to business
     await emailjs.send(
       process.env.EMAILJS_SERVICE_ID!,
       process.env.EMAILJS_TEMPLATE_ID!,
@@ -35,9 +28,9 @@ export async function POST(req) {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } catch (err) {
-    console.error('Email sending failed:', err);
-    return new Response(JSON.stringify({ error: 'Email failed to send' }), {
+  } catch (error: any) {
+    console.error('Email sending failed:', error);
+    return new Response(JSON.stringify({ error: error.message || 'Email failed' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
