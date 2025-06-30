@@ -35,13 +35,27 @@ const Book: React.FC = () => {
 
   // Load form data from sessionStorage, or redirect to contact form
   useEffect(() => {
-    const stored = sessionStorage.getItem('contactForm');
-    if (stored) {
-      setFormData(JSON.parse(stored));
-    } else {
+  const stored = sessionStorage.getItem('contactForm');
+
+  if (stored) {
+    try {
+      const parsed = JSON.parse(stored);
+
+      // Validate it's an object with at least a name or email (basic check)
+      if (typeof parsed !== 'object' || !parsed.email) throw new Error();
+
+      setFormData(parsed);
+    } catch {
+      sessionStorage.removeItem('contactForm');
+      alert('⚠️ Your session expired. Please fill out the contact form again.');
       navigate('/contact');
     }
-  }, [navigate]);
+  } else {
+    alert('⚠️ Please complete the contact form before booking.');
+    navigate('/contact');
+  }
+}, [navigate]);
+
 
   // Fetch all existing bookings from Firebase to determine availability
   useEffect(() => {
