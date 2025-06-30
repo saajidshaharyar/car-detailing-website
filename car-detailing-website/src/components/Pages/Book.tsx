@@ -114,7 +114,7 @@ const Book: React.FC = () => {
       await addDoc(collection(db, 'bookings'), bookingData);
 
       // Send emails via backend API
-      await fetch('/api/sendEmail/route', {
+      await fetch('/api/sendEmail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ bookingData }),
