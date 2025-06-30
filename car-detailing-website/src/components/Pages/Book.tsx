@@ -40,12 +40,14 @@ const Book: React.FC = () => {
   if (stored) {
     try {
       const parsed = JSON.parse(stored);
-      // Ensure required fields exist
-      if (!parsed.firstName || !parsed.email) throw new Error();
+
+      // Validate it's an object with at least a name or email (basic check)
+      if (typeof parsed !== 'object' || !parsed.email) throw new Error();
+
       setFormData(parsed);
     } catch {
       sessionStorage.removeItem('contactForm');
-      alert('⚠️ Please complete the contact form before booking.');
+      alert('⚠️ Your session expired. Please fill out the contact form again.');
       navigate('/contact');
     }
   } else {
@@ -53,7 +55,6 @@ const Book: React.FC = () => {
     navigate('/contact');
   }
 }, [navigate]);
-
 
   // Fetch all existing bookings from Firebase to determine availability
   useEffect(() => {
