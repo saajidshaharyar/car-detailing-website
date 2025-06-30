@@ -35,13 +35,25 @@ const Book: React.FC = () => {
 
   // Load form data from sessionStorage, or redirect to contact form
   useEffect(() => {
-    const stored = sessionStorage.getItem('contactForm');
-    if (stored) {
-      setFormData(JSON.parse(stored));
-    } else {
+  const stored = sessionStorage.getItem('contactForm');
+
+  if (stored) {
+    try {
+      const parsed = JSON.parse(stored);
+      // Ensure required fields exist
+      if (!parsed.firstName || !parsed.email) throw new Error();
+      setFormData(parsed);
+    } catch {
+      sessionStorage.removeItem('contactForm');
+      alert('⚠️ Please complete the contact form before booking.');
       navigate('/contact');
     }
-  }, [navigate]);
+  } else {
+    alert('⚠️ Please complete the contact form before booking.');
+    navigate('/contact');
+  }
+}, [navigate]);
+
 
   // Fetch all existing bookings from Firebase to determine availability
   useEffect(() => {
@@ -114,7 +126,7 @@ const Book: React.FC = () => {
       await addDoc(collection(db, 'bookings'), bookingData);
 
       // Send emails via backend API
-      await fetch('/api/sendEmail', {
+      await fetch('/api/sendEmail/route', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ bookingData }),
