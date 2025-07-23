@@ -124,8 +124,12 @@ const Book: React.FC = () => {
     };
 
      try {
-      // Save to Firestore
-      await addDoc(collection(db, 'bookings'), bookingData);
+      // Save to Firestore (only public-safe fields)
+      await addDoc(collection(db, 'bookings'), {
+        bookingDate: bookingData.bookingDate,
+        bookingTime: bookingData.bookingTime,
+        createdAt: bookingData.createdAt,
+      });
 
       // Send emails via backend API
       await fetch('/api/sendEmail', {
@@ -133,6 +137,7 @@ const Book: React.FC = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ bookingData }),
       });
+
       
       // Resets form
       setSuccess(true);
