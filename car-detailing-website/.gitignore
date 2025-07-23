@@ -39,6 +39,3 @@ node_modules/
 # Build Files
 dist/
 build/
-
-# Firebase config (prevent leaking API key)
-src/lib/firebaseConfig.ts

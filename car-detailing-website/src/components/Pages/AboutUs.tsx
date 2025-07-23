@@ -1,3 +1,5 @@
+// Full About Us page layout with hero, values, stats, services, and CTA
+
 import React, { useEffect, useRef, useState } from 'react';
 import {
   UserIcon,
@@ -11,6 +13,7 @@ import {
 } from 'lucide-react';
 import Button from '../UI/Button';
 
+// Animated counter component that triggers when in view using IntersectionObserver
 const CountUp = ({ end, duration = 2, suffix = '+' }: { end: number, duration?: number, suffix?: string }) => {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
@@ -21,6 +24,7 @@ const CountUp = ({ end, duration = 2, suffix = '+' }: { end: number, duration?: 
       ([entry]) => {
         if (entry.isIntersecting && !started.current) {
           started.current = true;
+          // Setup count animation
           let start = 0;
           const increment = end / (duration * 60);
           const animate = () => {
@@ -47,6 +51,7 @@ const CountUp = ({ end, duration = 2, suffix = '+' }: { end: number, duration?: 
   return <div ref={ref} className="text-5xl font-heading font-bold text-primary-500 transition-all duration-700 ease-out">{count}{suffix}</div>;
 };
 
+// Main AboutUs component defining the full "About Us" page layout
 const AboutUs: React.FC = () => {
   return (
     <div className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 min-h-screen pt-20">
@@ -61,7 +66,7 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      {/* Core Values */}
+      {/* Core Values — Visual cards highlighting company values */}
       <section className="py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-heading tracking-wide mb-4 text-primary-500">Our Core Values</h2>
@@ -93,7 +98,7 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      {/* Animated Counters */}
+      {/* Animated Counters — Live numeric stats that animate when in view */}
       <section className="py-20 bg-gray-100 dark:bg-gray-900 text-center">
         <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
           {[{ end: 100, label: 'Customers', suffix: '+' },
@@ -109,7 +114,7 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      {/* Who We Are */}
+      {/* Who We Are — Brand story and operational philosophy with supporting image */}
       <section className="py-16 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
