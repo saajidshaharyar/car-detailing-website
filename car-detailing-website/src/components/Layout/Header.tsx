@@ -60,7 +60,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
         <div className="text-center">
           <TypeAnimation
             sequence={[
-              'Bringing Showroom Shine to Your Driveway.', 2500,
+              'The Neighbourhood Detailer.', 2500,
               'Precision. Passion. Prestige.', 2500,
               'Your Car Deserves the Best.', 2500,
             ]}

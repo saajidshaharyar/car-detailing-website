@@ -58,7 +58,7 @@ const AboutUs: React.FC = () => {
       {/* Hero Section */}
       <section className="w-full bg-gradient-to-r from-gradient-start to-gradient-end text-white">
         <div className="container mx-auto p-12 lg:p-20 text-center max-w-3xl">
-          <h1 className="text-5xl font-accent tracking-widest uppercase mb-6">About ARS Auto-Detailing</h1>
+          <h1 className="text-5xl font-heading font-bold tracking-widest uppercase mb-6">About The Neighbourhood Detailer</h1>
           <p className="text-xl font-sans">
             We're a driven team of young car enthusiasts redefining auto-detailing — offering premium results at a fraction of the cost. 
             No shop required. We bring the detail shop to *your* driveway.
@@ -76,16 +76,16 @@ const AboutUs: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {[{
-              icon: <StarIcon className="w-10 h-10 text-blue-500" />, title: 'Excellence',
+              icon: <StarIcon className="w-10 h-10 text-primary-500" />, title: 'Excellence',
               desc: 'We aim for perfection with every vehicle — never rushed, never average.'
             }, {
-              icon: <UserIcon className="w-10 h-10 text-blue-500" />, title: 'Integrity',
+              icon: <UserIcon className="w-10 h-10 text-primary-500" />, title: 'Integrity',
               desc: 'We’re honest, transparent, and treat your car like it’s our own.'
             }, {
-              icon: <AwardIcon className="w-10 h-10 text-blue-500" />, title: 'Innovation',
+              icon: <AwardIcon className="w-10 h-10 text-primary-500" />, title: 'Innovation',
               desc: 'We research cutting-edge techniques for faster, safer detailing.'
             }, {
-              icon: <TruckIcon className="w-10 h-10 text-blue-500" />, title: 'Mobility',
+              icon: <TruckIcon className="w-10 h-10 text-primary-500" />, title: 'Mobility',
               desc: 'No garage? No problem. We come to your driveway with everything needed.'
             }].map(({ icon, title, desc }) => (
               <div key={title} className="bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-md hover:scale-105 transition-transform text-center">
@@ -120,7 +120,7 @@ const AboutUs: React.FC = () => {
           <div className="space-y-6">
             <h2 className="text-3xl font-heading font-bold text-gray-900 dark:text-white">Who We Are</h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-              ARS is a youth-led mobile detailing company built by passionate enthusiasts who believe high-end results shouldn't carry high-end price tags. 
+              The Neighbourhood Detailer is a youth-led mobile detailing company built by passionate enthusiasts who believe high-end results shouldn't carry high-end price tags. 
               Our model is simple: we bring our gear to you — wherever you are. Whether it’s your driveway, work parking lot, or private garage, we make clean cars happen.
             </p>
           </div>
@@ -132,11 +132,11 @@ const AboutUs: React.FC = () => {
       <section className="py-16 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {[{
-            icon: <Zap className="w-10 h-10 text-blue-500" />, title: 'Power Perfect', desc: 'High-powered vacuum extraction systems'
+            icon: <Zap className="w-10 h-10 text-primary-500" />, title: 'Power Perfect', desc: 'High-powered vacuum extraction systems'
           }, {
-            icon: <SprayCan className="w-10 h-10 text-blue-500" />, title: 'Shine Supreme', desc: 'Premium detailing-grade cleaning agents'
+            icon: <SprayCan className="w-10 h-10 text-primary-500" />, title: 'Shine Supreme', desc: 'Premium detailing-grade cleaning agents'
           }, {
-            icon: <Droplets className="w-10 h-10 text-blue-500" />, title: 'Steam Dream', desc: 'Deep steam cleaning for interiors'
+            icon: <Droplets className="w-10 h-10 text-primary-500" />, title: 'Steam Dream', desc: 'Deep steam cleaning for interiors'
           }].map(({ icon, title, desc }) => (
             <div key={title} className="hover:scale-105 transition-transform text-center">
               <div className="flex justify-center mb-4">{icon}</div>
@@ -150,7 +150,7 @@ const AboutUs: React.FC = () => {
       {/* Call to Action */}
       <section className="py-16 bg-primary-600 text-white text-center">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-4">Experience the ARS Difference</h2>
+          <h2 className="text-3xl font-edobrush mb-4">Experience The Neighbourhood Detailing Difference</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Don’t waste time driving to a shop. Let our team deliver showroom-quality detail right to your location.
           </p>

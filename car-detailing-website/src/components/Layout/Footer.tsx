@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { PhoneIcon, MailIcon, MapPinIcon } from 'lucide-react'
-import Logo from '../UI/Logo'
 /*
  * Footer Component
  *
@@ -27,9 +26,13 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-8 md:mb-0">
             <div className="flex items-center">
-              <Logo />
+              <img
+                src="TND Sign.png"
+                alt="The Neighbourhood Detailer"
+                className="h-20 w-auto object-contain"
+              />
               <h3 className="ml-2 text-xl font-display tracking-wider text-primary-500">
-                PrestigeOnWheelz
+                The Neighbourhood Detailer
               </h3>
             </div>
             <p className="mt-4 max-w-xs text-gray-400 font-sans">
@@ -79,7 +82,7 @@ const Footer: React.FC = () => {
               </ul>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-white">
+              <h4 className="text-lg font-heading mb-4 text-white">
                 Contact Information
               </h4>
               <ul className="space-y-4">
@@ -113,7 +116,7 @@ const Footer: React.FC = () => {
         </div>
         <div className="border-t border-gray-800 mt-12 pt-6 text-center text-gray-500 text-sm font-sans">
           <p>
-            &copy; {new Date().getFullYear()} PrestigeOnWheelz. All rights
+            &copy; {new Date().getFullYear()} The Neighbourhood Detailer. All rights
             reserved.
           </p>
         </div>

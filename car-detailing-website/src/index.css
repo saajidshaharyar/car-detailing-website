@@ -17,7 +17,7 @@
 /* ----------------------- */
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'EDOBrush', cursive;
+    font-family: 'Ananda', cursive;
   }
 
   body {
@@ -93,11 +93,29 @@
   font-family: 'PARAX';
 }
 @font-face {
-  font-family: 'Cyber';
-  src: url('/fonts/Cyber Brush.ttf') format('truetype');
+  font-family: 'Kingsman';
+  src: url('/fonts/KingsmanDemo-1GVgg.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-.font-cyber {
-  font-family: 'Cyber';
+.font-kingsman {
+  font-family: 'Kingsman'
+}
+@font-face {
+  font-family: 'LemonMilk';
+  src: url('/fonts/LemonMilkMediumItalic-d95nl.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+.font-lemonMilk {
+  font-family: 'LemonMilk'
+}
+@font-face {
+  font-family: 'Ananda';
+  src: url('/fonts/AnandaBlackPersonalUseRegular-rg9Rx.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.font-lemonMilk {
+  font-family: 'Ananda'
 }

@@ -9,21 +9,21 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: '#ffe6e6',
-          100: '#ffcccc',
-          200: '#ff9999',
-          300: '#ff6666',
-          400: '#ff3333',
-          500: '#ff0000', // Primary red
-          600: '#cc0000',
-          700: '#990000',
-          800: '#660000',
-          900: '#330000',
-        },
+          50: '#fffaf2',
+          100: '#fdf0d5',
+          200: '#fae0a8',
+          300: '#f5cd76',
+          400: '#efba4d',
+          500: '#d4a038', // Primary Gold (matches logo)
+          600: '#b5842c',
+          700: '#8f6823',
+          800: '#6b4e1a',
+          900: '#523b14',
+},
         gradient: {
           start: '#000000',
-          end: '#ff0000',
-        }
+          end: '#d4a038', // Gold
+        },
       },
       fontFamily: {
         // Updated font stack to match logo style
@@ -182,8 +182,8 @@ export default {
       boxShadow: {
         'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
         'glass-inset': 'inset 0 -1px 0 0 rgba(255, 255, 255, 0.05)',
-        'colored': '0 10px 15px -3px rgba(255, 0, 0, 0.1), 0 4px 6px -2px rgba(255, 0, 0, 0.05)',
-        'colored-lg': '0 25px 50px -12px rgba(255, 0, 0, 0.25)',
+        'colored': '0 10px 15px -3px rgba(212, 160, 56, 0.15), 0 4px 6px -2px rgba(212, 160, 56, 0.08)',
+        'colored-lg': '0 25px 50px -12px rgba(212, 160, 56, 0.25)',
         'inner-lg': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.1)',
       },
       // Enhanced backdrop blur for glassmorphism
@@ -247,10 +247,10 @@ export default {
           backdropFilter: 'blur(10px)',
           border: '1px solid rgba(255, 255, 255, 0.05)',
         },
-        '.glass-red': {
-          background: 'rgba(255, 0, 0, 0.1)',
+        '.glass-gold': {
+          background: 'rgba(212, 160, 56, 0.1)', // from primary[500]
           backdropFilter: 'blur(10px)',
-          border: '1px solid rgba(255, 0, 0, 0.2)',
+          border: '1px solid rgba(212, 160, 56, 0.3)',
         },
       };
       addUtilities(glassmorphismUtilities);
@@ -277,7 +277,7 @@ export default {
         '.hover-glow': {
           transition: 'all 0.3s ease',
           '&:hover': {
-            boxShadow: '0 0 20px rgba(255, 0, 0, 0.5)',
+            boxShadow: '0 0 20px rgba(212, 160, 56, 0.5)',
             transform: 'translateY(-2px)',
           },
         },

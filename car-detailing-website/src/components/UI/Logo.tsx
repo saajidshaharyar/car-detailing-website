@@ -4,9 +4,9 @@ const Logo: React.FC = () => {
   return (
     <Link to="/" aria-label="Go to homepage">
       <img
-        src="Untitled design (4).png"
-        alt="PrestigeOnWheelz"
-        className="h-20 w-auto scale-125 -translate-y-1"
+        src="TND_2.png"
+        alt="The Neighbourhood Detailer"
+        className="h-12 w-auto object-contain"
         style={{ marginBottom: '0px' }}
       />
     </Link>

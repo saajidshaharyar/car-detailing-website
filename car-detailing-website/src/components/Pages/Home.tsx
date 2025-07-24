@@ -52,7 +52,7 @@ const renderAnimatedText = (text: string, className = '') => (
             initial="hidden"
             animate="visible"
             className="inline-block"
-            style={{ fontFamily: 'Cyber' }}
+            style={{ fontFamily: 'LemonMilk' }}
           >
             {char}
           </motion.span>
@@ -66,7 +66,7 @@ const renderAnimatedText = (text: string, className = '') => (
     const { onClick } = props
     return (
       <div
-        className="absolute top-1/2 right-[-2rem] transform translate-y-1/2 z-20 text-red-600 text-xl font-bold cursor-pointer select-none"
+        className="absolute top-1/2 right-[-2rem] transform translate-y-1/2 z-20 text-primary-600 text-xl font-bold cursor-pointer select-none"
         onClick={onClick}
       >
         ❯
@@ -78,7 +78,7 @@ const renderAnimatedText = (text: string, className = '') => (
     const { onClick } = props
     return (
       <div
-        className="absolute top-1/2 left-[-2rem] transform translate-y-1/2 z-20 text-red-600 text-xl font-bold cursor-pointer select-none"
+        className="absolute top-1/2 left-[-2rem] transform translate-y-1/2 z-20 text-primary-600 text-xl font-bold cursor-pointer select-none"
         onClick={onClick}
       >
         ❮
@@ -99,7 +99,7 @@ const renderAnimatedText = (text: string, className = '') => (
   const pricePlans = [
     {
       title: 'Standard Detail',
-      price: '59.99',
+      price: '60',
       description: 'Basic interior cleaning and maintenance package.',
       features: [
         {
@@ -155,7 +155,7 @@ const renderAnimatedText = (text: string, className = '') => (
     },
     {
       title: 'Advanced Detail',
-      price: '84.99',
+      price: '90',
       description: 'Comprehensive interior cleaning with stain removal.',
       features: [
         {
@@ -211,7 +211,7 @@ const renderAnimatedText = (text: string, className = '') => (
     },
     {
       title: 'Premium Detail',
-      price: '125.99',
+      price: '140',
       description: 'Complete interior and exterior detailing experience.',
       features: [
         {
@@ -322,7 +322,7 @@ const renderAnimatedText = (text: string, className = '') => (
           playsInline
           className="absolute inset-0 object-cover w-full h-full z-0"
         >
-        <source src="/BackgroundFini.mp4" type="video/mp4" />
+        <source src="/Backgroundvid.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       
@@ -331,12 +331,12 @@ const renderAnimatedText = (text: string, className = '') => (
           <div className="bg-black/60 rounded-2xl px-4 sm:px-10 py-12 shadow-2xl border border-white/10 backdrop-blur-sm w-full max-w-4xl mx-auto">
      {renderAnimatedText(
   'UNMATCHED QUALITY,',
-  'text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight drop-shadow-md',
+  'text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight italic drop-shadow-md',
 )}
 
 {renderAnimatedText(
   'DELIVERED TO YOUR DRIVEWAY',
-  'text-red-600 text-2xl sm:text-3xl md:text-4xl lg:text-5xl italic mt-10',
+  'text-primary-600 text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold italic mt-10',
 )}
 
     <p className="text-3xl md:text-xl text-gray-200 mt-6 font-light tracking-wide max-w-4xl mx-auto leading-relaxed" style={{ fontFamily: 'PARAX' }}>
@@ -348,7 +348,7 @@ const renderAnimatedText = (text: string, className = '') => (
             <Button
               to="/contact"
               size="lg"
-              className="min-w-[200px] text-lg px-6 font-edobrush" 
+              className="min-w-[200px] text-2xl px-6 font-kingsman" 
             >
               Book Now <ArrowRightIcon className="ml-2 w-5 h-5" />
             </Button>
@@ -356,7 +356,7 @@ const renderAnimatedText = (text: string, className = '') => (
               to="/gallery"
               variant="outline"
               size="lg"
-              className="min-w-[200px] text-lg font-edobrush px-20 !bg-white !text-primary-600 border-primary-600 hover:!bg-primary-600 hover:!text-white"
+              className="min-w-[200px] text-2xl font-kingsman px-20 !bg-white !text-primary-600 border-primary-600 hover:!bg-primary-600 hover:!text-white"
             >
               View Our Work
             </Button>
@@ -369,7 +369,7 @@ const renderAnimatedText = (text: string, className = '') => (
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-center">
             <div className="text-left">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary-500 leading-tight text-center sm:text-left px-2 sm:px-0">
-                Why Choose PrestigeOnWheelz?
+                Why Choose The Neighbourhood Detailer?
               </h2>
               <p className="text-gray-600 dark:text-gray-400 text-2xl leading-relaxed">
                 Experience luxury car care with our premium detailing services.
@@ -635,7 +635,7 @@ const renderAnimatedText = (text: string, className = '') => (
             Ready to Transform Your Vehicle?
           </h2>
           <p className="text-3xl mb-10 max-w-2xl mx-auto font-light text-gray-200" style={{ fontFamily: 'PARAX' }}>
-            Book your appointment today and experience the PrestigeOnWheelz
+            Book your appointment today and experience The Neighbourhood Detailing
             difference.
           </p>
           <div className="flex flex-wrap gap-6 justify-center">
@@ -643,7 +643,7 @@ const renderAnimatedText = (text: string, className = '') => (
               to="/contact#booking-form"
               size="lg"
               variant="primary"
-              className="text-lg px-20 font-edobrush"
+              className="text-2xl px-20 font-kingsman"
             >
               Book Your Detail Now
             </Button>
@@ -651,7 +651,7 @@ const renderAnimatedText = (text: string, className = '') => (
               to="/gallery"
               size="lg"
               variant="primary"
-              className="text-lg px-20 font-edobrush !bg-white !text-primary-600 border-primary-600 hover:!bg-primary-600 hover:!text-white"
+              className="text-2xl px-20 font-kingsman !bg-white !text-primary-600 border-primary-600 hover:!bg-primary-600 hover:!text-white"
             >
               Our Gallery
             </Button>

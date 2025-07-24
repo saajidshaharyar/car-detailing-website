@@ -65,10 +65,10 @@ const Gallery: React.FC = () => {
       <section className="w-full flex flex-col md:flex-row h-auto md:h-[340px]">
         <div className="w-full md:w-1/2 h-64 md:h-full bg-gradient-to-br from-primary-700 to-primary-800 text-white px-10 py-8 flex flex-col justify-center">
           <div className="max-w-md">
-            <h1 className="text-4xl md:text-5xl font-bold italic mb-4 font-display">
+            <h1 className="text-4xl md:text-5xl font-bold italic mb-4 font-edobrush">
               Our Work
             </h1>
-            <p className="text-lg md:text-xl font-semibold text-white/90 leading-relaxed">
+            <p className="text-lg md:text-xl font-display italic text-white/90 leading-relaxed">
               Browse through our gallery of before and after transformations. Each image showcases our attention to detail and commitment to excellence.
             </p>
           </div>
@@ -95,7 +95,7 @@ const Gallery: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto px-4 md:px-8 border-t border-red-400 dark:border-slate-700 pt-8">
           {/* BEFORE */}
           <div onClick={() => openModal('before')} className="cursor-pointer flex flex-col items-center space-y-4 bg-white/80 dark:bg-slate-800/70 backdrop-blur-sm border border-red-400 dark:border-slate-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
-            <p className="text-3xl font-bold italic tracking-wide text-red-500" style={{ fontFamily: 'EDOBrush' }}>Before Detailing</p>
+            <p className="text-3xl font-bold italic tracking-wide text-primary-500" style={{ fontFamily: 'LemonMilk' }}>Before Detailing</p>
             <img
               src="/before1.jpg"
               alt="Before Thumbnail"
@@ -106,7 +106,7 @@ const Gallery: React.FC = () => {
 
           {/* AFTER */}
           <div onClick={() => openModal('after')} className="cursor-pointer flex flex-col items-center space-y-4 bg-white/80 dark:bg-slate-800/70 backdrop-blur-sm border border-red-400 dark:border-slate-700 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all">
-            <p className="text-3xl font-bold italic tracking-wide text-red-500" style={{ fontFamily: 'EDOBrush' }}>After Detailing</p>
+            <p className="text-3xl font-bold italic tracking-wide text-primary-500" style={{ fontFamily: 'LemonMilk' }}>After Detailing</p>
             <img
               src="/after1.jpg"
               alt="After Thumbnail"
