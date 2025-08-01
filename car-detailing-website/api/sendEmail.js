@@ -27,7 +27,7 @@ export default async function handler(req, res) {
     await emailjs.send(
       process.env.EMAILJS_SERVICE_ID,
       process.env.EMAILJS_TEMPLATE_ID,
-      { ...bookingData, to_email: 'prestigeonwheelz@gmail.com' },
+      { ...bookingData, to_email: 'theneighbourhooddetailers@gmail.com' },
       {
         publicKey: process.env.EMAILJS_PUBLIC_KEY,
         privateKey: process.env.EMAILJS_PRIVATE_KEY,
