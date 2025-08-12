@@ -14,47 +14,44 @@ export default async function handler(req, res) {
 
     console.log("✅ bookingData received:", bookingData);
 
-    // Step 1: Create transporter
+    // Gmail SMTP transporter
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_SENDER,     // your Gmail address
-        pass: process.env.EMAIL_APP_PASS,   // Gmail App Password (not your actual password)
+        user: process.env.EMAIL_SENDER,     // Your Gmail address
+        pass: process.env.EMAIL_APP_PASS,   // Gmail App Password
       },
     });
 
-    // Step 2: Email to Client
+    // Email template (replicating EmailJS)
+    const htmlTemplate = (recipientName) => `
+      <p>Hi ${recipientName},</p>
+      <p>Thank you for booking with Neighbourhood Detailer!</p>
+
+      <p>📅 Booking Date: ${bookingData.bookingDate}</p>
+      <p>🕒 Booking Time: ${bookingData.bookingTime}</p>
+      <p>📦 Package: ${bookingData.service}</p>
+      <p>📞 Phone: ${bookingData.phone}</p>
+      <p>📝 Details: ${bookingData.message}</p>
+
+      <p>We’ll be in touch shortly to confirm or follow up.</p>
+      <p>– The Neighbourhood Detailer Team</p>
+    `;
+
+    // 1️⃣ Email to Client
     await transporter.sendMail({
       from: `"Neighbourhood Detailer" <${process.env.EMAIL_SENDER}>`,
       to: bookingData.email,
       subject: 'Your Car Detailing Appointment Confirmation',
-      html: `
-        <h2>Thank you for booking!</h2>
-        <p>We've received your request:</p>
-        <ul>
-          <li><strong>Name:</strong> ${bookingData.name}</li>
-          <li><strong>Email:</strong> ${bookingData.email}</li>
-          <li><strong>Date:</strong> ${bookingData.date}</li>
-          <li><strong>Time:</strong> ${bookingData.time}</li>
-        </ul>
-        <p>We’ll be in touch shortly!</p>
-      `,
+      html: htmlTemplate(bookingData.firstName || "Valued Customer"),
     });
 
-    // Step 3: Email to Yourself (Business)
+    // 2️⃣ Email to Business
     await transporter.sendMail({
       from: `"Neighbourhood Detailer" <${process.env.EMAIL_SENDER}>`,
       to: 'theneighbourhooddetailers@gmail.com',
       subject: '📥 New Booking Received',
-      html: `
-        <h2>New Booking Alert</h2>
-        <ul>
-          <li><strong>Name:</strong> ${bookingData.name}</li>
-          <li><strong>Email:</strong> ${bookingData.email}</li>
-          <li><strong>Date:</strong> ${bookingData.date}</li>
-          <li><strong>Time:</strong> ${bookingData.time}</li>
-        </ul>
-      `,
+      html: htmlTemplate("Neighbourhood Detailer Team"),
     });
 
     return res.status(200).json({ success: true });
