@@ -8,12 +8,6 @@ import { PhoneIcon, MailIcon, MapPinIcon } from 'lucide-react'
  * - Quick navigation links
  * - Contact information
  * - Copyright notice
- *
- * Development Timeline:
- * - Day 1: Basic footer structure
- * - Day 2: Added responsive layout
- * - Day 3: Integrated contact information
- * - Day 4: Enhanced with dark mode support
  */
 const Footer: React.FC = () => {
   return (

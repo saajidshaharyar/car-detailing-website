@@ -28,9 +28,11 @@ export default async function handler(req, res) {
       <p>Hi ${recipientName},</p>
       <p>Thank you for booking with Neighbourhood Detailer!</p>
 
+      <p>📛 Name: ${bookingData.firstName} ${bookingData.lastName || ""}</p>
       <p>📅 Booking Date: ${bookingData.bookingDate}</p>
       <p>🕒 Booking Time: ${bookingData.bookingTime}</p>
       <p>📦 Package: ${bookingData.service}</p>
+      <p>📧 Email: ${bookingData.email}</p>
       <p>📞 Phone: ${bookingData.phone}</p>
       <p>📝 Details: ${bookingData.message}</p>
 

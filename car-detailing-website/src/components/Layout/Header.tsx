@@ -11,12 +11,6 @@ import { TypeAnimation } from 'react-type-animation'
  * - Theme toggle (light/dark mode)
  * - Mobile-friendly hamburger menu
  * - Active route highlighting
- *
- * Development Timeline:
- * - Day 1: Basic header structure and navigation
- * - Day 2: Added theme toggle functionality
- * - Day 3: Implemented responsive mobile menu
- * - Day 4: Added animations and transitions
  */
 interface HeaderProps {
   theme: 'light' | 'dark'

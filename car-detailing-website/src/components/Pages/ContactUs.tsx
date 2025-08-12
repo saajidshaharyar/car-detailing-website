@@ -131,7 +131,7 @@ const ContactUs: React.FC = () => {
                 <div className="ml-4">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Email</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    <a href="mailto:prestigeonwheelz@gmail.com" className="hover:text-blue-600 dark:hover:text-blue-400">prestigeonwheelz@gmail.com</a>
+                    <a href="mailto:theneighbourhooddetailers@gmail.com" className="hover:text-blue-600 dark:hover:text-blue-400">theneighbourhooddetailers@gmail.com</a>
                   </p>
                 </div>
               </div>

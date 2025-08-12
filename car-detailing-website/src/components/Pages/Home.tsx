@@ -20,12 +20,6 @@ import {
  * - Features showcase
  * - Pricing plans
  * - Call-to-action sections
- *
- * Development Timeline:
- * - Day 2: Initial hero section and layout
- * - Day 2: Added pricing plans integration
- * - Day 3: Implemented feature sections
- * - Day 4: Enhanced visual effects and animations
  */
 const Home: React.FC = () => {
   const letterAnimation = {

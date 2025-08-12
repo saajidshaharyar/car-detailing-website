@@ -10,9 +10,6 @@ import Button from './Button';
  * - Service package selection
  * - Appointment scheduling
  * - Form validation
- *
- * Backend integration: Form data is passed to the booking page
- * using sessionStorage and router navigation.
  */
 
 const ContactForm: React.FC = () => {
