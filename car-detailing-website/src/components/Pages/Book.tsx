@@ -86,21 +86,39 @@ const Book: React.FC = () => {
 
   // Determines if a date should be selectable (e.g., not fully booked or a Friday)
   const isAvailableDate = (date: Date) => {
-    if (date.getDay() === 5) return false;
-    const dateStr = date.toDateString();
-    const slots = bookedDates[dateStr] || [];
-    const hours = Array.from({ length: 8 }, (_, i) => i + 10);
-    const isFullyBooked = hours.every(hour => [hour, hour - 1, hour - 2].some(h => slots.includes(h)));
-    return !isFullyBooked;
-  };
+  if (date.getDay() === 5) return false; // block Fridays
+
+  const now = new Date();
+  const dateStr = date.toDateString();
+  const slots = bookedDates[dateStr] || [];
+  const hours = Array.from({ length: 8 }, (_, i) => i + 10);
+
+  // Filter hours: remove booked and past hours (if today)
+  const availableHours = hours.filter(hour => {
+    const isBooked = slots.some(booked => [booked, booked + 1, booked + 2].includes(hour));
+    const isPast = dateStr === now.toDateString() && hour <= now.getHours();
+    return !isBooked && !isPast;
+  });
+
+  return availableHours.length > 0; // true only if at least one hour is available
+};
 
   // Determines if a specific hour is still available for booking
   const isAvailableTime = (hour: number) => {
-    for (let booked of bookedSlots) {
-      if ([booked, booked + 1, booked + 2].includes(hour)) return false;
-    }
-    return hour >= 10 && hour <= 17;
-  };
+  const now = new Date();
+
+  // If selectedDate is today, disable past hours
+  if (selectedDate?.toDateString() === now.toDateString() && hour <= now.getHours()) {
+    return false;
+  }
+
+  // Disable hours that overlap with existing bookings
+  for (let booked of bookedSlots) {
+    if ([booked, booked + 1, booked + 2].includes(hour)) return false;
+  }
+
+  return hour >= 10 && hour <= 17;
+};
 
   const formatTimeLabel = (hour: number) => {
     const period = hour >= 12 ? 'PM' : 'AM';
