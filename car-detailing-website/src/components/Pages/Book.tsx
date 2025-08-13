@@ -22,6 +22,9 @@ import {
 
 const Book: React.FC = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+      document.title = "The Neighbourhood Detailer - Book";
+    }, []);
 
   // Form state and booking selections
   const [formData, setFormData] = useState<any>(null);

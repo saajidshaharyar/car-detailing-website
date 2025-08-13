@@ -21,6 +21,9 @@ const Gallery: React.FC = () => {
   useEffect(() => {
     setIsMounted(true);
 
+    // Set page title when Gallery mounts
+    document.title = "The Neighbourhood Detailer - Gallery";
+
     // Keyboard accessibility: escape closes modal, arrows navigate
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeModal();

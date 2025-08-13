@@ -53,6 +53,9 @@ const CountUp = ({ end, duration = 2, suffix = '+' }: { end: number, duration?: 
 
 // Main AboutUs component defining the full "About Us" page layout
 const AboutUs: React.FC = () => {
+  useEffect(() => {
+    document.title = "The Neighbourhood Detailer - About Us";
+  }, []);
   return (
     <div className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 min-h-screen pt-20">
       {/* Hero Section */}

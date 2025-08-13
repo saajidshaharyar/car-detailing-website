@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react'
+import React, { useEffect, useState, Component } from 'react'
 import Button from '../UI/Button'
 import PricePlan from '../UI/PricePlan'
 import FeatureModal from '../UI/FeatureModal'
@@ -22,6 +22,9 @@ import {
  * - Call-to-action sections
  */
 const Home: React.FC = () => {
+  useEffect(() => {
+      document.title = "The Neighbourhood Detailer -  Home";
+    }, []);
   const letterAnimation = {
   hidden: { opacity: 0, y: 10 },
   visible: (i: number) => ({

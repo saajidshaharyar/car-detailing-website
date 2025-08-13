@@ -10,7 +10,7 @@
  *
  * The page uses Tailwind CSS for styling and React state to manage FAQ toggles.
  */
-import React from 'react';
+import React, { useEffect } from 'react';
 import ContactForm from '../UI/ContactForm';
 import {
   PhoneIcon,
@@ -76,6 +76,9 @@ const faqs = {
 
 // Main functional component for the Contact Us page
 const ContactUs: React.FC = () => {
+  useEffect(() => {
+    document.title = "The Neighbourhood Detailer - Contact Us";
+  }, []);
   // State to track which FAQ section is open
   const [openIndex, setOpenIndex] = React.useState<string | null>(null);
   // Toggles open/close state of a specific FAQ item
