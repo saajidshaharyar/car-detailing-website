@@ -1,4 +1,4 @@
-# PrestigeOnWheelz Auto-Detailing
+# The Neighbourhood Detailer
 
 A web application designed to provide my personal car detailing business with a modern, responsive website that informs customers and boosts online presence.
 
@@ -10,7 +10,7 @@ A web application designed to provide my personal car detailing business with a 
 Local car detailing businesses often lack a professional, digital presence — missing out on customer engagement and trust.
 
 ### Why This Program Solves the Problem
-This project provides a fully customizable website template built with modern technologies (React, TypeScript, Vite), giving small businesses an easy-to-maintain, attractive platform to showcase their services.
+This project provides a fully customizable website template built with modern technologies (React, TypeScript, Vite, API Backend routes), giving small businesses an easy-to-maintain, attractive platform to showcase their services.
 
 ### Why Users Should Care
 A visually appealing, responsive, and structured website helps build credibility and increases conversion rates for local service businesses, especially in highly competitive urban markets like Toronto.
@@ -22,9 +22,9 @@ A visually appealing, responsive, and structured website helps build credibility
 - **React.js** – Frontend framework
 - **TypeScript** – Type-safe JavaScript
 - **Vite** – Fast bundler and dev server
-- **Tailwind CSS** – Utility-first styling
+- **Tailwind CSS** – Utility-first styling (Custom Fonts)
 - **Firebase Firestore** – Booking data storage
-- **EmailJS** – Automated email confirmations
+- **Nodemailer** – Automated email confirmations
 - **Framer Motion** – Smooth animations
 - **React-Router** – Page navigation
 
@@ -32,7 +32,8 @@ A visually appealing, responsive, and structured website helps build credibility
 
 ## 🚀 Features
 
-- Hero section with animated text and video background
+- Hero section with text and video background
+- Header has animated text
 - Dynamic pricing tiers (Standard, Advanced, Premium)
 - Fully functional **booking form** with:
   - Time slot logic (blocks 3-hour ranges)
@@ -46,35 +47,21 @@ A visually appealing, responsive, and structured website helps build credibility
 
 ---
 
-## 🛠️ Installation & Development Timeline
-
-### ✅ May 18–19
-- Vite + TypeScript setup
-- Folder structure under `components/Layout` and `components/Pages`
-- Routing with `react-router-dom`
-- Header/footer + light/dark mode
-- Initial Git commit
-
-### ✅ May 20–21
-- Homepage completed (video hero, CTA, pricing)
-- Reusable components (`Button`, `PricePlan`)
-- Code commented and cleaned
-
-### ✅ May 22–23
-- About, Gallery, and Contact pages finalized
-- Embedded Google Maps on Contact page
-- Gallery slider and FAQ planning started
-
-### ✅ June 24–26
-- Firebase integration for booking availability
-- Time slot gray-out and availability logic complete
-- EmailJS integration added with `.env.local` key protection
-- Final environment-safe push to GitHub
-
----
-
 ## ⚙️ Usage
 
+1. Clone the repository.
+
+2. Install dependencies with npm install or yarn.
+
+3. Create a .env.local file with the required environment variables for email sending (e.g., EMAIL_SENDER, EMAIL_APP_PASS) and any other API keys.
+
+4. Run the development server locally with npm run dev or yarn dev. This will start both the frontend and your API routes.
+
+5. Test the booking form and email functionality locally.
+
+6. Deploy to Vercel or your preferred hosting provider with environment variables configured in the deployment settings.
+
+7. Connect your custom domain and verify email features are working in production.
 ```bash
 npm install       # Install dependencies
 npm run dev       # Start local development server
